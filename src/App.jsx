@@ -1,39 +1,20 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+ 
+import { IconBrandFacebook, IconBrandTwitter } from '@tabler/icons-react';
+import Button from './assets/Component/Button';
 
-function App() {
-    const [count, setCount] = useState(0);
-
+export default function App() {
     return (
-        <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img
-                        src={reactLogo}
-                        className='logo react'
-                        alt='React logo'
-                    />
-                </a>
+        <div className="bg-slate-900 grid place-content-center min-h-screen">
+            <div className="flex gap-x-3">
+                <Button type='submit' text='Register' onClick={() => console.log('register')}>
+                    <IconBrandFacebook />
+                    Register
+                </Button>
+                <Button className='text-2xl bg-red-500'>
+                    <IconBrandTwitter/>
+                        Login
+                </Button>
             </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>
-                Click on the Vite and React logos to learn more
-            </p>
-        </>
+        </div>
     );
 }
-
-export default App;
